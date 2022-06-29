@@ -2,11 +2,6 @@
 
 version: '3'
 
-vars:
-  GREETING: Hello, World!
+includes:
+  taskfile: ./{{OS}}/{{OS}}.yaml
 
-tasks:
-  default:
-    cmds:
-      - echo "{{.GREETING}}"
-    silent: true
