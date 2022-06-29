@@ -3,5 +3,5 @@
 version: '3'
 
 includes:
-  taskfile: ./{{OS}}/{{OS}}.yaml
+  build: ./{{OS}}/{{OS}}.yaml
 
