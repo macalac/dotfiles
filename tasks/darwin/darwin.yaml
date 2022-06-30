@@ -6,8 +6,26 @@ vars:
   GREETING: Hello, World!
 
 tasks:
-  default:
+
+  install_brew:
+    run: once
     cmds:
-      - echo "{{.GREETING}} from {{OS}}"
+      - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     silent: true
+    status:
+      - "which brew"
+
+  default:
+    deps:
+      - task: brew_app
+        vars: {APP_BREW_NAME: "jq"}
+      - task: brew_app
+        vars: {APP_BREW_NAME: "tree"}
+
+  brew_app:
+    label: 'brew_{{.APP_BREW_NAME}}'
+    deps:
+      - task: install_brew
+    cmds:
+      - brew install {{.APP_BREW_NAME}}
 
