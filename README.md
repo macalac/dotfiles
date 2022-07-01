@@ -27,3 +27,7 @@ Still to be added
 -----------------
 - [ ] import iterm colour palette
 - [ ] import osx config
+
+Painpoints
+----------
+- brew cannot install apps on multiple threads, needs sequential installation
