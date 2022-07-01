@@ -41,6 +41,14 @@ tasks:
         vars: {APP_BREW_NAME: "tldr"}
       - task: brew_app
         vars: {APP_BREW_NAME: "awscli"}
+      - task: install_oh_my_zsh
+
+  install_oh_my_zsh:
+    cmds:
+      - sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    deps:
+      - task: brew_app
+        vars: {APP_BREW_NAME: "zsh"}
 
   brew_app:
     label: 'brew_{{.APP_BREW_NAME}}'
