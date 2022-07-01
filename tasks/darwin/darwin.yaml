@@ -31,6 +31,10 @@ tasks:
         vars: {APP_BREW_NAME: "intellij-idea"}
       - task: brew_app
         vars: {APP_BREW_NAME: "zsh-syntax-highlighting"}
+      - task: brew_app
+        vars: {APP_BREW_NAME: "neovim"}
+      - task: brew_app
+        vars: {APP_BREW_NAME: "git"}
 
   brew_app:
     label: 'brew_{{.APP_BREW_NAME}}'
