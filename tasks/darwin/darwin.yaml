@@ -21,6 +21,16 @@ tasks:
         vars: {APP_BREW_NAME: "jq"}
       - task: brew_app
         vars: {APP_BREW_NAME: "tree"}
+      - task: brew_app
+        vars: {APP_BREW_NAME: "httpie"}
+      - task: brew_app
+        vars: {APP_BREW_NAME: "grammarly-desktop"}
+      - task: brew_app
+        vars: {APP_BREW_NAME: "iterm2"}
+      - task: brew_app
+        vars: {APP_BREW_NAME: "intellij-idea"}
+      - task: brew_app
+        vars: {APP_BREW_NAME: "zsh-syntax-highlighting"}
 
   brew_app:
     label: 'brew_{{.APP_BREW_NAME}}'
