@@ -35,6 +35,8 @@ tasks:
         vars: {APP_BREW_NAME: "neovim"}
       - task: brew_app
         vars: {APP_BREW_NAME: "git"}
+      - task: brew_app
+        vars: {APP_BREW_NAME: "git-delta"}
 
   brew_app:
     label: 'brew_{{.APP_BREW_NAME}}'
