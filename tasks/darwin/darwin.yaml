@@ -41,7 +41,15 @@ tasks:
         vars: {APP_BREW_NAME: "tldr"}
       - task: brew_app
         vars: {APP_BREW_NAME: "awscli"}
+      - task: install_tf_with_tfenv
       - task: install_oh_my_zsh
+
+  install_tf_with_tfenv:
+    cmds:
+      - tfenv install
+    deps:
+      - task: brew_app
+        vars: {APP_BREW_NAME: "tfenv"}
 
   install_oh_my_zsh:
     cmds:
@@ -49,6 +57,8 @@ tasks:
     deps:
       - task: brew_app
         vars: {APP_BREW_NAME: "zsh"}
+    status:
+      - "which omz"
 
   brew_app:
     label: 'brew_{{.APP_BREW_NAME}}'
