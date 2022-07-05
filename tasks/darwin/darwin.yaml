@@ -11,9 +11,8 @@ tasks:
     run: once
     cmds:
       - /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-    silent: true
     status:
-      - "which brew"
+      - sh common/installation_checker.sh brew
 
   default:
     deps:
@@ -53,12 +52,12 @@ tasks:
 
   install_oh_my_zsh:
     cmds:
-      - sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      - ZSH= sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
     deps:
       - task: brew_app
         vars: {APP_BREW_NAME: "zsh"}
     status:
-      - "which omz"
+      - test -d ~/.oh-my-zsh
 
   brew_app:
     label: 'brew_{{.APP_BREW_NAME}}'
