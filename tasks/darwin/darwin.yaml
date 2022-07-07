@@ -42,6 +42,8 @@ tasks:
         vars: {APP_BREW_NAME: "awscli"}
       - task: install_tf_with_tfenv
       - task: install_oh_my_zsh
+      - task: brew_app
+        vars: {APP_BREW_NAME: "istat-menus"}
 
   install_tf_with_tfenv:
     cmds:
