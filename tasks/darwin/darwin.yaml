@@ -44,6 +44,8 @@ tasks:
       - task: install_oh_my_zsh
       - task: brew_app
         vars: {APP_BREW_NAME: "istat-menus"}
+      - task: brew_app
+        vars: {APP_BREW_NAME: "python"}
 
   install_tf_with_tfenv:
     cmds:
