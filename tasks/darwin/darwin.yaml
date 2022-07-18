@@ -46,6 +46,8 @@ tasks:
         vars: {APP_BREW_NAME: "istat-menus"}
       - task: brew_app
         vars: {APP_BREW_NAME: "python"}
+      - task: brew_app
+        vars: {APP_BREW_NAME: "podman"}
 
   install_tf_with_tfenv:
     cmds:
