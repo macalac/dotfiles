@@ -1,0 +1,14 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  default:
+    deps:
+      - task: install_app
+        vars: {APP_BREW_NAME: "zsh-syntax-highlighting"}
+
+  install_app:
+    label: 'install_{{.APP_BREW_NAME}}'
+    cmds:
+      - sudo apt install {{.APP_BREW_NAME}}
