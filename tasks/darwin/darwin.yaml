@@ -46,6 +46,7 @@ tasks:
         vars: {APP_BREW_NAME: "istat-menus"}
       - task: brew_app
         vars: {APP_BREW_NAME: "python"}
+      - task: install_python_pip
       - task: brew_app
         vars: {APP_BREW_NAME: "podman"}
 
@@ -64,6 +65,13 @@ tasks:
         vars: {APP_BREW_NAME: "zsh"}
     status:
       - test -d ~/.oh-my-zsh
+
+  install_python_pip:
+    cmds:
+      - python3 -m ensurepip --upgrade
+    deps:
+      - task: brew_app
+        vars: {APP_BREW_NAME: "python"}
 
   brew_app:
     label: 'brew_{{.APP_BREW_NAME}}'
