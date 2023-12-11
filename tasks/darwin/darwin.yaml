@@ -49,6 +49,8 @@ tasks:
       - task: install_python_pip
       - task: brew_app
         vars: {APP_BREW_NAME: "podman"}
+      - task: brew_app
+        vars: {APP_BREW_NAME: "trippy"}
 
   install_tf_with_tfenv:
     cmds:
